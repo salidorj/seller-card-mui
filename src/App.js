@@ -8,7 +8,7 @@ import { StickyFooter } from "./Components/error404/error";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Routes>
         <Route exact path="/" Component={Home} />
         <Route path="/poster" Component={PublishPage} />

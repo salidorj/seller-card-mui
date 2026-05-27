@@ -24,8 +24,7 @@ export function SelectorPublish(props) {
           label="Category"
           onChange={handleChange}
         >
-            {props.catList.map((item)=>{
-              
+            {props.catList.map((item)=>{    
                 return <MenuItem key={item} value={item.namee}>{item.namee}</MenuItem>
             }
             )}

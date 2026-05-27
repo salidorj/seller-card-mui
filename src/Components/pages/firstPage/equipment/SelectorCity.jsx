@@ -9,7 +9,8 @@ import { MainSelector } from "../../secondPage/equpment/mainSelector";
 
 export function SelectorCity(props) {
   const [cityId, setCityId] = React.useState();
-  const valueCity = {props.cityes.filter((item)=> item == cityId)}
+
+ const valueCity = props.cityes[cityId];
 
   const handleCityChange = (event) => {
     props.setProv(event.target.value[0]);
@@ -24,7 +25,6 @@ export function SelectorCity(props) {
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">PROVENCE-NAME</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
             id="demo-simple-select"
             label="Provence"
             onChange={handleCityChange}
@@ -45,14 +45,12 @@ export function SelectorCity(props) {
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">CITY-NAME</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
             id="demo-simple-select"
-            label="Provence"
-            onChange={handleCityChange}
+            label="cityes"
           >
-            {valueCity.map((item, index)=>{
+             {valueCity?.map((item, index)=>{
               return(<MenuItem key={index} value={item}>{item}</MenuItem>);
-            })}
+            })} 
           </Select>
         </FormControl>
       </Box>
